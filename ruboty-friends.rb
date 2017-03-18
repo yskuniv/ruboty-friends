@@ -12,7 +12,7 @@ module Ruboty
       )
 
       def unknown_friends(message)
-        message.reply("Hi, friends. Where are you from, friends?")
+        message.reply("Hi, friends. I don't know a friends like you... Where are you from, friends?")
       end
     end
   end

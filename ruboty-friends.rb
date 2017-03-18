@@ -3,6 +3,9 @@
 module Ruboty
   module Handlers
     class Friends < Base
+      class Friend
+      end
+
       on(
         /hi\z/i,
         name: "hi"

@@ -8,11 +8,11 @@ module Ruboty
 
       on(
         /hi\z/i,
-        name: "hi"
+        name: "unknown_friends"
       )
 
-      def hi(message)
-        message.reply("hi, friends.")
+      def unknown_friends(message)
+        message.reply("Hi, friends. Where are you from, friends?")
       end
     end
   end

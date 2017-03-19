@@ -11,8 +11,17 @@ module Ruboty
         name: "identify_friends"
       )
 
+      on(
+        /i(?:'?m| am) your friend(|s)\z/i,
+        name: "add_friends"
+      )
+
       def identify_friends(message)
         unknown_friends(message)
+      end
+
+      def add_friends(message)
+        message.reply("Oh, you're my friends! Nice to meet you, #{message.from}!")
       end
 
       def unknown_friends(message)

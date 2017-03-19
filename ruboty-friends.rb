@@ -38,21 +38,18 @@ module Ruboty
       def identify_friends(message)
         friends_name = message.from_name
 
-        if is_friend?(friends_name)
-          friend = pick_friend(friends_name)
+        begin_friend_only_or_unknown message, friends_name do |friend|
           recognize_friend message, friend
-        else
-          unknown_friends message
         end
       end
 
       def add_friend(message)
         friends_name = message.from_name
 
-        if is_friend?(friends_name)
+        begin
           friend = pick_friend(friends_name)
           recognize_friend message, friend
-        else
+        rescue NoSuchFriendError => e
           friend = new_friend(friends_name)
           message.reply("Oh, you're my friends. Nice to meet you, #{friend.name}!")
         end
@@ -78,6 +75,15 @@ module Ruboty
 
       def unknown_friends(message)
         message.reply("Hi, friends. Hmm... I don't know a friends like you... Where are you from, friends?")
+      end
+
+      def begin_friend_only_or_unknown(message, friends_name)
+        begin
+          friend = pick_friend(friends_name)
+          yield friend
+        rescue NoSuchFriendError => e
+          unknown_friends message
+        end
       end
     end
   end

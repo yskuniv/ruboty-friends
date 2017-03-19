@@ -12,9 +12,11 @@ module Ruboty
       end
 
       class NoSuchFriendError < StandardError
-        def initialize(name)
-          @name = name
+        def initialize(friends_name)
+          @friends_name = friends_name
         end
+
+        attr_reader :friends_name
       end
 
       def initialize(message)

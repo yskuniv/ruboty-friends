@@ -32,7 +32,14 @@ module Ruboty
       )
 
       def identify_friends(message)
-        unknown_friends
+        friends_name = message.from_name
+
+        if is_friend?(name)
+          friend = pick_friend(name)
+          recognize_friend friend
+        else
+          unknown_friends
+        end
       end
 
       def add_friends(message)
@@ -47,6 +54,10 @@ module Ruboty
 
       def pick_friend(name)
         @friends[name] or NoSuchFriendError.new(name)
+      end
+
+      def recognize_friend(friend)
+        message.reply("Hi, #{friend.name}. You're my friend!")
       end
 
       def unknown_friends

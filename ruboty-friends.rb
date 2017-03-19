@@ -50,7 +50,7 @@ module Ruboty
           recognize_friend friend
         else
           friend = new_friend(name)
-          message.reply("Oh, you're my friends! Nice to meet you, #{friend.name}!")
+          message.reply("Oh, you're my friends. Nice to meet you, #{friend.name}!")
         end
       end
 

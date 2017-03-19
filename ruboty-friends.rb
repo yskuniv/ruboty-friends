@@ -43,13 +43,25 @@ module Ruboty
       end
 
       def add_friends(message)
-        message.reply("Oh, you're my friends! Nice to meet you, #{message.from_name}!")
+        friends_name = message.from_name
+
+        if is_friend?(name)
+          friend = pick_friend(name)
+          recognize_friend friend
+        else
+          friend = new_friend(name)
+          message.reply("Oh, you're my friends! Nice to meet you, #{friend.name}!")
+        end
       end
 
       private
 
       def is_friend?(name)
         @friends[name] ? true : false
+      end
+
+      def new_friend(name)
+        @friends[name] = Friend.new(name)
       end
 
       def pick_friend(name)

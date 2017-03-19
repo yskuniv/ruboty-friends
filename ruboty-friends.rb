@@ -40,7 +40,7 @@ module Ruboty
           friend = pick_friend(friends_name)
           recognize_friend friend
         else
-          unknown_friends
+          unknown_friends message
         end
       end
 
@@ -74,7 +74,7 @@ module Ruboty
         message.reply("Hi, #{friend.name}. You're my friend!")
       end
 
-      def unknown_friends
+      def unknown_friends(message)
         message.reply("Hi, friends. Hmm... I don't know a friends like you... Where are you from, friends?")
       end
     end

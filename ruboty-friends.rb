@@ -11,7 +11,7 @@ module Ruboty
         attr_reader :name
       end
 
-      class NoSuchFriendError < Standard
+      class NoSuchFriendError < StandardError
         def initialize(name)
           @name = name
         end

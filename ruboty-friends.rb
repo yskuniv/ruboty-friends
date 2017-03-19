@@ -69,7 +69,7 @@ module Ruboty
       end
 
       def pick_friend(name)
-        @friends[name] or NoSuchFriendError.new(name)
+        @friends[name] or raise NoSuchFriendError.new(name)
       end
 
       def recognize_friend(message, friend)

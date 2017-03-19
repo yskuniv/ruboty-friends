@@ -4,6 +4,11 @@ module Ruboty
   module Handlers
     class Friends < Base
       class Friend
+        def initialize(name)
+          @name = name
+        end
+
+        attr_reader :name
       end
 
       class NoSuchFriendError < Standard

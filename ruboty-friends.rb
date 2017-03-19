@@ -8,8 +8,12 @@ module Ruboty
 
       on(
         /hi\z/i,
-        name: "unknown_friends"
+        name: "recognize_friends"
       )
+
+      def recognize_friends(message)
+        unknown_friends(message)
+      end
 
       def unknown_friends(message)
         message.reply("Hi, friends. Hmm... I don't know a friends like you... Where are you from, friends?")

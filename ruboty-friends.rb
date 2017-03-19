@@ -3,13 +3,16 @@
 module Ruboty
   module Handlers
     class Friends < Base
+      class Friend
+      end
+
       on(
         /hi\z/i,
-        name: "hi"
+        name: "unknown_friends"
       )
 
-      def hi(message)
-        message.reply("hi, friends.")
+      def unknown_friends(message)
+        message.reply("Hi, friends. Hmm... I don't know a friends like you... Where are you from, friends?")
       end
     end
   end

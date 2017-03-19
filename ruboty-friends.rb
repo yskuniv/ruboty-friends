@@ -8,10 +8,10 @@ module Ruboty
 
       on(
         /hi\z/i,
-        name: "recognize_friends"
+        name: "identify_friends"
       )
 
-      def recognize_friends(message)
+      def identify_friends(message)
         unknown_friends(message)
       end
 

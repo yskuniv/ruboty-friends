@@ -17,7 +17,9 @@ module Ruboty
         end
       end
 
-      def initialize
+      def initialize(message)
+        super message
+
         @friends = {}
       end
 

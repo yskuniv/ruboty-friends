@@ -21,7 +21,7 @@ module Ruboty
       end
 
       def add_friends(message)
-        message.reply("Oh, you're my friends! Nice to meet you, #{message.from}!")
+        message.reply("Oh, you're my friends! Nice to meet you, #{message.from_name}!")
       end
 
       def unknown_friends(message)

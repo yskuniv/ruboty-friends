@@ -28,7 +28,7 @@ module Ruboty
 
       on(
         /i(?:'?m| am) your friend(|s)\z/i,
-        name: "add_friends"
+        name: "add_friend"
       )
 
       def identify_friends(message)
@@ -42,7 +42,7 @@ module Ruboty
         end
       end
 
-      def add_friends(message)
+      def add_friend(message)
         friends_name = message.from_name
 
         if is_friend?(name)

@@ -4,6 +4,6 @@ Gem::Specification.new do |spec|
   spec.authors = ["ysk_univ"]
   spec.email = ["ysk.univ.1007@gmail.com"]
   spec.summary = "ruboty-friends"
-  spec.files = ["ruboty-friends.rb"]
+  spec.files = ["ruboty_friends.rb"]
   spec.require_path = "."
 end
